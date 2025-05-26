@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://obstacle.tscn" type="PackedScene" id=1]
+
+[node name="obstacleScene" type="Node2D"]
+
+[node name="obstacle" parent="." instance=ExtResource( 1 )]

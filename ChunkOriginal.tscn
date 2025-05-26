@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ChunkOriginal.gd" type="Script" id=1]
+[ext_resource path="res://ChatGPT Image 2025년 5월 21일 오후 06_59_12.png" type="Texture" id=3]
+
+[node name="ChunkOriginal" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="backgroundImage" type="Sprite" parent="."]
+position = Vector2( 360.2, 640.3 )
+scale = Vector2( 0.702734, 0.832943 )
+texture = ExtResource( 3 )

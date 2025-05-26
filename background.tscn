@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://perception_system.tscn" type="PackedScene" id=1]
+[ext_resource path="res://background.gd" type="Script" id=2]
+[ext_resource path="res://ChunkOriginal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://obstacleScene.gd" type="Script" id=4]
+[ext_resource path="res://obstacleScene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://obstacleScene2.gd" type="Script" id=6]
+[ext_resource path="res://obstacleScene3.gd" type="Script" id=7]
+[ext_resource path="res://Music.gd" type="Script" id=8]
+[ext_resource path="res://ProjectR_OST.mp3" type="AudioStream" id=9]
+
+[node name="background" type="Node2D"]
+script = ExtResource( 2 )
+chunk_scene = ExtResource( 3 )
+
+[node name="perception_system" parent="." instance=ExtResource( 1 )]
+
+[node name="ChunkOriginal" parent="." instance=ExtResource( 3 )]
+
+[node name="obstacleScene" parent="." instance=ExtResource( 5 )]
+position = Vector2( 120, -100 )
+script = ExtResource( 4 )
+obstacle1scene = ExtResource( 5 )
+
+[node name="obstacleScene2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 360, -100 )
+script = ExtResource( 6 )
+
+[node name="obstacleScene3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 600, -100 )
+script = ExtResource( 7 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+script = ExtResource( 8 )
+
+[connection signal="music_start" from="." to="Music" method="_on_background_music_start"]
+[connection signal="spawn_obstacle" from="." to="perception_system" method="_on_background_spawn_obstacle"]
+[connection signal="spawn_1" from="perception_system" to="obstacleScene" method="_on_perception_system_spawn_1"]
+[connection signal="spawn_2" from="perception_system" to="obstacleScene2" method="_on_perception_system_spawn_2"]
+[connection signal="spawn_3" from="perception_system" to="obstacleScene3" method="_on_perception_system_spawn_3"]

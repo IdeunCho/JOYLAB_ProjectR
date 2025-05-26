@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ProjectR_OST.mp3-e8d71739e4691c21079da2b5b5570934.mp3str"
+
+[deps]
+
+source_file="res://ProjectR_OST.mp3"
+dest_files=[ "res://.import/ProjectR_OST.mp3-e8d71739e4691c21079da2b5b5570934.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
