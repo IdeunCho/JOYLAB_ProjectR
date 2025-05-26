@@ -12,7 +12,7 @@ var obstacle_instance = null
 func _on_perception_system_spawn_1():
 	if obstacle1scene:
 		obstacle_instance = obstacle1scene.instance()
-		obstacle_instance.position = Vector2(120, -100) # y=100으로 테스트
+		obstacle_instance.position = Vector2(360, -100) # y=100으로 테스트
 		obstacle_instance.visible = true
 		obstacle_instance.z_index = 1
 		add_child(obstacle_instance)

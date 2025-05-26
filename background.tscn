@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://perception_system.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://obstacleScene3.gd" type="Script" id=7]
 [ext_resource path="res://Music.gd" type="Script" id=8]
 [ext_resource path="res://ProjectR_OST.mp3" type="AudioStream" id=9]
+[ext_resource path="res://obstacle.tscn" type="PackedScene" id=10]
 
 [node name="background" type="Node2D"]
 script = ExtResource( 2 )
@@ -21,7 +22,7 @@ chunk_scene = ExtResource( 3 )
 [node name="obstacleScene" parent="." instance=ExtResource( 5 )]
 position = Vector2( 120, -100 )
 script = ExtResource( 4 )
-obstacle1scene = ExtResource( 5 )
+obstacle1scene = ExtResource( 10 )
 
 [node name="obstacleScene2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 360, -100 )

@@ -6,7 +6,7 @@ signal spawn_2
 signal spawn_3
 
 var last_spawn_time := -1.0
-var judge_window := 1
+var judge_window := 0.075
 var input_locked := false  # 입력 판정 잠금
 
 func _ready():
@@ -17,7 +17,7 @@ func _on_background_spawn_obstacle():
 	print("hi")
 	last_spawn_time = OS.get_ticks_msec() / 1000.0
 	input_locked = false  # 새로운 비트가 들어오면 입력 잠금 해제
-	var options = [1, 2, 3]
+	var options = [1]#, 2, 3]
 	var obstacle_spawn_point = options[randi() % options.size()]
 	if obstacle_spawn_point == 1:
 		emit_signal("spawn_1")
@@ -32,11 +32,11 @@ func _process(delta):
 		var now = OS.get_ticks_msec() / 1000.0
 		var error = abs(now - last_spawn_time)
 		if error <= judge_window:
-			print("🎯Perfect!")
+			print("Perfect!")
 			emit_signal("perfect_beat_pressed")
 		elif error <= judge_window * 2:
-			print("👍Good")
+			print("Good")
 		elif error <= judge_window * 3:
-			print("😬Bad")
+			print("Bad")
 		else:
 			print("❌Miss")
